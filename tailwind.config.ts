@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,10 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				dot: {
+					DEFAULT: '#C03FFF',
+					cyan: '#28D8F1'
 				}
 			},
 			borderRadius: {
@@ -84,11 +89,90 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'bounce-in': {
+					'0%': { 
+						transform: 'translateY(50px)',
+						opacity: '0'
+					},
+					'70%': { 
+						transform: 'translateY(-10px)',
+						opacity: '0.7'
+					},
+					'100%': { 
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
+				},
+				'glow': {
+					'0%': {
+						boxShadow: '0 0 5px rgba(40, 216, 241, 0.7), 0 0 10px rgba(192, 63, 255, 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 20px rgba(40, 216, 241, 0.9), 0 0 30px rgba(192, 63, 255, 0.7)'
+					},
+					'100%': {
+						boxShadow: '0 0 5px rgba(40, 216, 241, 0.7), 0 0 10px rgba(192, 63, 255, 0.5)'
+					}
+				},
+				'float': {
+					'0%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' },
+					'100%': { transform: 'translateY(0px)' }
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-out': 'fade-out 0.5s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out',
+				'bounce-in': 'bounce-in 0.7s ease-out',
+				'glow': 'glow 2s infinite',
+				'float': 'float 3s infinite ease-in-out',
+				'pulse': 'pulse 2s infinite ease-in-out'
+			},
+			backgroundImage: {
+				'hero-gradient': 'linear-gradient(90deg, #28D8F1, #C03FFF)',
+				'glow-conic': 'conic-gradient(from 180deg at 50% 50%, #28D8F1 0deg, #C03FFF 180deg, #28D8F1 360deg)'
+			},
+			fontFamily: {
+				rajdhani: ['"Rajdhani"', 'sans-serif'],
+				inter: ['"Inter"', 'sans-serif']
 			}
 		}
 	},
