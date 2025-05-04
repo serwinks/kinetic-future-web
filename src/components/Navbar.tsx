@@ -40,8 +40,8 @@ const Navbar: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-background/80 backdrop-blur-xl py-3 border-b border-white/10 shadow-lg'
-          : 'bg-transparent py-5'
+          ? 'bg-background/40 backdrop-blur-xl py-3 border-b border-white/10 shadow-lg'
+          : 'bg-background/20 backdrop-blur-md py-5' // Added glassy effect even when not scrolled
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -56,12 +56,12 @@ const Navbar: React.FC = () => {
             <Link
               key={item.label}
               to={item.href}
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+              className="text-sm font-medium text-white/90 hover:text-white transition-colors"
             >
               {item.label}
             </Link>
           ))}
-          <Button className="bg-gradient-to-r from-dot-cyan to-dot hover:opacity-90 transition-opacity">
+          <Button className="bg-gradient-to-r from-dot-cyan to-dot hover:opacity-90 transition-opacity backdrop-blur-sm border border-white/20">
             Join Us
           </Button>
         </nav>
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
               {item.label}
             </Link>
           ))}
-          <Button className="w-full bg-gradient-to-r from-dot-cyan to-dot hover:opacity-90 transition-opacity">
+          <Button className="w-full bg-gradient-to-r from-dot-cyan to-dot hover:opacity-90 transition-opacity backdrop-blur-sm border border-white/20">
             Join Us
           </Button>
         </nav>
