@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -10,12 +11,12 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' }, // Added About section
-  { label: 'Team', href: '#team' },
-  { label: 'Mentors', href: '#mentors' }, // Added Mentors section
-  { label: 'Events', href: '#events' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Team', href: '/team' },
+  { label: 'Mentors', href: '/mentors' },
+  { label: 'Events', href: '/events' },
+  { label: 'Contact', href: '/contact' }
 ];
 
 const Navbar: React.FC = () => {
@@ -44,21 +45,21 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#home" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <img src="/dot-logo.png" alt="DOT Logo" className="h-10" />
           <span className="text-2xl font-bold font-rajdhani text-gradient">DOT</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Button className="bg-gradient-to-r from-dot-cyan to-dot hover:opacity-90 transition-opacity">
             Join Us
@@ -84,14 +85,14 @@ const Navbar: React.FC = () => {
       >
         <nav className="container mx-auto px-6 flex flex-col items-center space-y-6 py-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="text-xl font-medium text-white/80 hover:text-white transition-colors"
               onClick={toggleMobileMenu}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Button className="w-full bg-gradient-to-r from-dot-cyan to-dot hover:opacity-90 transition-opacity">
             Join Us
