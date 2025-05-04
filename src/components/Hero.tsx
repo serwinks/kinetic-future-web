@@ -38,6 +38,10 @@ const Hero: React.FC = () => {
       </div>
       
       <div className="container mx-auto text-center z-10 mt-20">
+        <div className="mb-8 flex justify-center">
+          <img src="/dot-logo.png" alt="DOT Logo" className="h-32 animate-bounce-in" />
+        </div>
+        
         <h1 
           ref={titleRef} 
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0"

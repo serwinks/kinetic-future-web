@@ -25,7 +25,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: 'Alex Chen',
     role: 'Founder & Lead Developer',
-    bio: 'Full-stack developer with 7+ years experience in AI and web technologies.',
+    bio: 'Full-stack developer specializing in AI and cloud architecture. Can debug complex systems while blindfolded.',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e',
     skills: [
       { name: 'React', level: 95 },
@@ -41,7 +41,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: 'Sarah Johnson',
     role: 'UX/UI Design Lead',
-    bio: 'Creative designer passionate about accessible and inclusive digital experiences.',
+    bio: 'Creative designer passionate about accessible and inclusive digital experiences. Turns complex workflows into intuitive interfaces.',
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956',
     skills: [
       { name: 'UI/UX', level: 90 },
@@ -57,7 +57,7 @@ const teamMembers: TeamMember[] = [
     id: 3,
     name: 'Marcus Wong',
     role: 'Backend Architect',
-    bio: 'System architect specializing in scalable cloud solutions and database design.',
+    bio: 'System architect specializing in scalable cloud solutions and database design. Creates systems that survive any traffic spike.',
     image: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919',
     skills: [
       { name: 'Cloud', level: 95 },
@@ -73,7 +73,7 @@ const teamMembers: TeamMember[] = [
     id: 4,
     name: 'Priya Patel',
     role: 'Community Manager',
-    bio: 'Community builder focused on creating inclusive spaces for developers.',
+    bio: 'Community builder focused on creating inclusive spaces for developers. Connects people and ideas across disciplines.',
     image: 'https://images.unsplash.com/photo-1569913486515-b74bf7751574',
     skills: [
       { name: 'Community', level: 90 },
@@ -181,10 +181,10 @@ const Team: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Core Team</span>
+            <span className="text-gradient">Meet the Engine: Our Core Team</span>
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Meet the passionate developers and designers building the future of technology
+            A lean squad of passionate students — the heartbeat of D.O.T. Each of us wears multiple hats, from event coordinator to full-stack coder.
           </p>
         </div>
         

@@ -13,43 +13,52 @@ interface Event {
   type: 'hackathon' | 'workshop' | 'talk' | 'meetup';
 }
 
-// Mock data - replace with real data when available
+// Updated events based on content
 const events: Event[] = [
   {
     id: 1,
-    title: 'Web3 Developer Workshop',
-    date: 'May 15, 2025',
-    time: '10:00 AM - 4:00 PM',
-    description: 'Learn to build decentralized applications with the latest blockchain technologies.',
+    title: 'AI Bootcamp Weekend',
+    date: 'April 12–14, 2025',
+    time: 'All day',
+    description: 'Hands-on ML pipelines with Python & Scikit-Learn',
     location: 'Innovation Hub, Building 4',
     type: 'workshop'
   },
   {
     id: 2,
-    title: 'Future of AI Hackathon',
-    date: 'June 5-7, 2025',
+    title: 'DataViz Hackathon',
+    date: 'May 3, 2025',
     time: 'All day',
-    description: '48-hour coding sprint to build AI-powered solutions for real-world challenges.',
+    description: 'Build an interactive dashboard in 8 hours',
     location: 'Tech Campus, Main Hall',
     type: 'hackathon'
   },
   {
     id: 3,
-    title: 'Design Systems Masterclass',
-    date: 'July 12, 2025',
-    time: '2:00 PM - 5:00 PM',
-    description: 'Create scalable design systems that bridge the gap between design and development.',
-    location: 'Design Lab, Studio 5',
+    title: 'Industry Speaker Series',
+    date: 'Monthly',
+    time: '5:00 PM - 7:00 PM',
+    description: 'Roundtable with data leaders',
+    location: 'Online / Hybrid',
     type: 'talk'
   },
   {
     id: 4,
-    title: 'Monthly Developer Meetup',
-    date: 'August 3, 2025',
-    time: '6:30 PM - 9:00 PM',
-    description: 'Network with fellow developers and share your latest projects in a casual setting.',
-    location: 'Byte Cafe, Downtown',
-    type: 'meetup'
+    title: 'Spring 2024 Hackathon',
+    date: 'March 15, 2024',
+    time: 'All day',
+    description: '80 students, 15 innovative prototypes',
+    location: 'Main Campus',
+    type: 'hackathon'
+  },
+  {
+    id: 5,
+    title: 'TensorFlow 101 Workshop',
+    date: 'February 20, 2024',
+    time: '2:00 PM - 5:00 PM',
+    description: 'Live coding with Mentor Priya Desai',
+    location: 'CSE Building, Room 302',
+    type: 'workshop'
   }
 ];
 
@@ -145,10 +154,10 @@ const Events: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Happenings</span>
+            <span className="text-gradient">What's Happening</span>
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Join us at our upcoming events and become part of our growing community
+            From weekend hackathons to deep-dive bootcamps, here's what's coming up—and what you missed.
           </p>
         </div>
         

@@ -11,7 +11,9 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' }, // Added About section
   { label: 'Team', href: '#team' },
+  { label: 'Mentors', href: '#mentors' }, // Added Mentors section
   { label: 'Events', href: '#events' },
   { label: 'Contact', href: '#contact' }
 ];
@@ -43,6 +45,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center space-x-2">
+          <img src="/dot-logo.png" alt="DOT Logo" className="h-10" />
           <span className="text-2xl font-bold font-rajdhani text-gradient">DOT</span>
         </a>
 
