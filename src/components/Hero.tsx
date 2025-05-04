@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [typedText, setTypedText] = useState('');
-  const textToType = "Where innovation meets code. We build tomorrow's technologies today.";
+  const textToType = "From classroom concepts to real-world solutions, we're the CSE Data Science Department that lights the spark.";
   const titleRef = useRef<HTMLHeadingElement>(null);
   
   useEffect(() => {
@@ -42,13 +42,19 @@ const Hero: React.FC = () => {
           ref={titleRef} 
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0"
         >
-          Welcome to <br />
-          <span className="text-gradient">Developers Of Tomorrow</span>
+          <span className="text-gradient">Building Tomorrow's Developers, Today.</span>
         </h1>
         
         <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-white/80 h-16">
           {typedText}
           <span className="animate-pulse">|</span>
+        </p>
+        
+        <p className="text-base md:text-lg max-w-3xl mx-auto mb-10 text-white/70">
+          Developers Of Tomorrow (D.O.T.) is a student-led community driven by curiosity, 
+          collaboration, and code. Whether you're just starting out or ready to level up, 
+          join us for hands-on workshops, cutting-edge hackathons, and peer projects that 
+          bridge the gap between academics and industry.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

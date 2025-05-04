@@ -36,15 +36,14 @@ const ParticleBackground: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Initialize particles
-    const colors = ['#28D8F1', '#C03FFF', '#5D5DFF', '#FF56A9'];
+    // Initialize particles - now all white and larger
     particles.current = Array.from({ length: 50 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 0.5,
+      size: Math.random() * 3 + 1.5, // Increased size from 0.5-2.5 to 1.5-4.5
       speedX: (Math.random() - 0.5) * 0.5,
       speedY: (Math.random() - 0.5) * 0.5,
-      color: colors[Math.floor(Math.random() * colors.length)]
+      color: '#FFFFFF' // All particles are now white
     }));
 
     const animate = () => {
@@ -52,17 +51,29 @@ const ParticleBackground: React.FC = () => {
       
       // Update and draw particles
       particles.current.forEach(particle => {
-        // Move particles
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
+        // Calculate distance to mouse
+        const dx = mousePosition.current.x - particle.x;
+        const dy = mousePosition.current.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
         
-        // Boundary checking
-        if (particle.x < 0 || particle.x > canvas.width) {
-          particle.speedX *= -1;
-        }
-        
-        if (particle.y < 0 || particle.y > canvas.height) {
-          particle.speedY *= -1;
+        // Move particles towards mouse if they're within range
+        if (distance < 200) {
+          // Stronger pull towards mouse
+          particle.x += dx * 0.02;
+          particle.y += dy * 0.02;
+        } else {
+          // Normal movement when not near mouse
+          particle.x += particle.speedX;
+          particle.y += particle.speedY;
+          
+          // Boundary checking
+          if (particle.x < 0 || particle.x > canvas.width) {
+            particle.speedX *= -1;
+          }
+          
+          if (particle.y < 0 || particle.y > canvas.height) {
+            particle.speedY *= -1;
+          }
         }
         
         // Draw particle
@@ -72,15 +83,11 @@ const ParticleBackground: React.FC = () => {
         ctx.fill();
         
         // Connect particles close to mouse
-        const dx = mousePosition.current.x - particle.x;
-        const dy = mousePosition.current.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < 120) {
+        if (distance < 200) {
           ctx.beginPath();
-          ctx.strokeStyle = particle.color;
-          ctx.globalAlpha = 1 - distance / 120;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = '#FFFFFF';
+          ctx.globalAlpha = 1 - distance / 200;
+          ctx.lineWidth = 0.8; // Slightly thicker lines
           ctx.moveTo(particle.x, particle.y);
           ctx.lineTo(mousePosition.current.x, mousePosition.current.y);
           ctx.stroke();
@@ -102,7 +109,7 @@ const ParticleBackground: React.FC = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed inset-0 pointer-events-none z-0 opacity-50"
+      className="fixed inset-0 pointer-events-none z-0 opacity-60"
     />
   );
 };
