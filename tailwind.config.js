@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -11,14 +12,14 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(90deg, #28D8F1, #C03FFF)',
+        'hero-gradient': 'linear-gradient(90deg, #000000, #444444)',
       },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: '#0a0a0a',
-        foreground: '#ffffff',
+        background: '#ffffff',
+        foreground: '#222222',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -47,8 +48,8 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        'dot': '#FF6B6B',
-        'dot-cyan': '#4ECDC4',
+        'dot': '#222222',
+        'dot-cyan': '#555555',
       },
       borderRadius: {
         lg: "var(--radius)",

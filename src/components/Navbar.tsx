@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
     >
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-gradient">
+          <Link to="/" className="text-2xl font-bold text-black">
             D.O.T
           </Link>
 
