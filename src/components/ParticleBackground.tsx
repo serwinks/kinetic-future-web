@@ -37,13 +37,13 @@ const ParticleBackground: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     // Initialize particles - increased count and size
-    particles.current = Array.from({ length: 120 }, () => ({
+    particles.current = Array.from({ length: 150 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      size: Math.random() * 5 + 2.5, // Increased size from 1.5-4.5 to 2.5-7.5
-      speedX: (Math.random() - 0.5) * 0.8, // Slightly faster movement
-      speedY: (Math.random() - 0.5) * 0.8,
-      color: '#FFFFFF' // All particles remain white
+      size: Math.random() * 6 + 3, // Increased size from 2.5-7.5 to 3-9
+      speedX: (Math.random() - 0.5) * 1.0, // Slightly faster movement
+      speedY: (Math.random() - 0.5) * 1.0,
+      color: '#000000' // Changed to black
     }));
 
     const animate = () => {
@@ -57,10 +57,10 @@ const ParticleBackground: React.FC = () => {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         // Move particles towards mouse if they're within range - increased range
-        if (distance < 250) { // Increased from 200 to 250
+        if (distance < 300) { // Increased from 250 to 300
           // Stronger pull towards mouse
-          particle.x += dx * 0.03; // Increased from 0.02 to 0.03
-          particle.y += dy * 0.03;
+          particle.x += dx * 0.04; // Increased from 0.03 to 0.04
+          particle.y += dy * 0.04;
         } else {
           // Normal movement when not near mouse
           particle.x += particle.speedX;
@@ -83,11 +83,11 @@ const ParticleBackground: React.FC = () => {
         ctx.fill();
         
         // Connect particles close to mouse - increased range
-        if (distance < 250) { // Increased from 200 to 250
+        if (distance < 300) { // Increased from 250 to 300
           ctx.beginPath();
-          ctx.strokeStyle = '#FFFFFF';
-          ctx.globalAlpha = 1 - distance / 250;
-          ctx.lineWidth = 1.2; // Thicker connection lines
+          ctx.strokeStyle = '#000000'; // Changed to black
+          ctx.globalAlpha = 0.8 - distance / 300; // Increased opacity
+          ctx.lineWidth = 1.5; // Thicker connection lines
           ctx.moveTo(particle.x, particle.y);
           ctx.lineTo(mousePosition.current.x, mousePosition.current.y);
           ctx.stroke();
@@ -100,11 +100,11 @@ const ParticleBackground: React.FC = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 120) { // Only connect particles that are close to each other
+          if (distance < 150) { // Increased from 120 to 150
             ctx.beginPath();
-            ctx.strokeStyle = '#FFFFFF';
-            ctx.globalAlpha = 0.2 * (1 - distance / 120); // Fade based on distance
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = '#000000'; // Changed to black
+            ctx.globalAlpha = 0.3 * (1 - distance / 150); // Increased opacity
+            ctx.lineWidth = 1.0; // Increased line width
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             ctx.stroke();
@@ -127,7 +127,7 @@ const ParticleBackground: React.FC = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed inset-0 pointer-events-none z-0 opacity-70" // Increased opacity
+      className="fixed inset-0 pointer-events-none z-0 opacity-80" // Increased opacity
     />
   );
 };

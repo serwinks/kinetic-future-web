@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -39,7 +40,7 @@ const Navbar: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
         isScrolled
-          ? 'glass py-3 border-b border-white/30 shadow-lg'
+          ? 'glass py-3 border-b border-gray-200/50 shadow-lg'
           : 'glass py-5'
       )}
     >
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.href}
                 to={item.href}
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-gray-700 hover:text-black transition-colors"
               >
                 {item.label}
               </Link>
@@ -65,7 +66,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-gray-700 focus:outline-none"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -79,7 +80,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-gray-700 hover:text-black transition-colors"
                   onClick={toggleMobileMenu}
                 >
                   {item.label}
